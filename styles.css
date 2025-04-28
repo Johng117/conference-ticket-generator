@@ -1,16 +1,115 @@
-:root {};
+/* styles stipulated in the ./style-guide.md file */
+
+:root {
+  --Neutral-0: hsl(0, 0%, 100%);
+  --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-900: hsl(248, 70%, 10%);
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 71%, 60%);
+  --Gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%); /* (text) */
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/assets/fonts/static/Inconsolata-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url("./assets/fonts/static/Inconsolata-Medium.ttf");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url("./assets/fonts/static/Inconsolata-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Inconsolata";
+  src: url("./assets/fonts/static/Inconsolata-ExtraBold.ttf");
+  font-style: normal;
+  font-weight: 800;
+}
 
 * {
-    box-sizing: border-box;
-};
+  box-sizing: border-box;
+  margin: 0;
+}
 
 html {
-    margin: 0;
-    height:100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
-/* TODO does it work without specifying height of body */
-/* body {
-    height:100%;
-    width: 100%;
-} */
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Inconsolata";
+  /* z-index: -3; */
+}
+
+.main-container {
+  position: relative;
+  height: 100%;
+  width: 375px;
+  background-image: url("/assets/images/background-mobile.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+  text-align: center;
+  /* z-index:-2; */
+}
+
+.overlay-lines {
+  position: absolute;
+  border: 1px solid red;
+  width: 100%;
+  top: 0;
+  right: 12px;
+  height: 50%;
+  background-image: url("./assets/images/pattern-lines.svg");
+  background-size: 1024px;
+  /* z-index: -1; */
+}
+
+.squiggle{
+  position: absolute;
+  border: 1px solid red;
+  background-image: url("./assets/images/pattern-squiggly-line-top.svg");
+  height: 100px;
+  width: 100px;
+  top:5px;
+  left:275px;
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position:  center;
+  z-index: 2;
+}
+
+.title-heading-container {
+  /* z-index: 1; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .title {
+    display: flex;
+    font-size: 23px;
+    color: var(--Neutral-0);
+    font-weight: 800;
+    z-index: 5;
+    gap: 12px;
+    margin-top: 35px;
+
+    & img {
+      height: 26px;
+      width: 26px;
+    }
+  }
+}

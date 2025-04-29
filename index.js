@@ -8,4 +8,4 @@ function dragstartHandler(ev) {
 }
 
 // Add the ondragstart event listener
-dragEl.addEventListener("dragstart", dragstartHandler);
+dragEl.addEventListener("dragstart",dragstartHandler);

@@ -17,6 +17,7 @@
     <section class="main-container">
       <div class="overlay-lines"></div>
       <div class="squiggle"></div>
+      <div class="rings"></div>
       <section class="title-heading-container">
         <article class="title">
           <img src="./assets/images/logo-mark.svg" />
@@ -31,7 +32,7 @@
       </section>
       <section class="upload-avatar">
         <h4>Upload Avatar</h4>
-        <div class="droppable-element">
+        <div class="droppable-element" id="droppable-element">
           <div class="droppable-element-image-container">
             <img
               id="droppable-element-image"
@@ -42,12 +43,14 @@
             Drag and drop or click to upload
           </h4>
         </div>
-        <h5 class="droppable-info">
-          <img class="droppable-info-img" src="./assets/images/icon-info.svg" />
-          Upload your photo (JPG or PNG, max size: 500KB).
-        </h5>
+        <div class="droppable-info">
+          <object class="droppable-info-img" src="./assets/images/icon-info.svg" />
+          <h5 id="droppable-info-text">
+            Upload your photo (JPG or PNG, max size: 500KB).
+          </h5>
+        </div>
       </section>
-      <form class="form" id="form" method="post" autocomplete="off">
+      <form class="form" id="form" method="post">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" />
         <div class="name-error"></div>
@@ -67,7 +70,9 @@
           placeholder="@yourusername"
         />
         <div class="github-name-error"></div>
-        <button type="submit" value="Submit" id="submit">Generate My Ticket</button>
+        <button type="submit" value="Submit" id="submit">
+          Generate My Ticket
+        </button>
       </form>
       <div class="bottom-squiggle"></div>
     </section>

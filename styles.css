@@ -61,10 +61,9 @@ body {
   background-size: cover;
   margin: 0 auto;
   text-align: center;
-  /* z-index:-2; */
 }
 
-.overlay-lines {
+/* .overlay-lines {
   position: absolute;
   width: 100%;
   top: 0;
@@ -72,7 +71,7 @@ body {
   height: 50%;
   background-image: url("./assets/images/pattern-lines.svg");
   background-size: 1024px;
-}
+} */
 
 .squiggle {
   position: absolute;
@@ -84,11 +83,21 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 2;
+}
+
+.rings {
+  position: absolute;
+  background-image: url("./assets/images/pattern-circle.svg");
+  height: 100px;
+  width: 100px;
+  top: -25px;
+  left: -18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .title-heading-container {
-  /* z-index: 1; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,6 +147,7 @@ body {
   padding: 15px;
   margin-top: 30px;
 
+  
   & .droppable-element {
     height: 140px;
     width: 100%;
@@ -145,6 +155,7 @@ body {
     margin-top: 10px;
     border-radius: 15px;
     border: 2px dashed var(--Neutral-500);
+    z-index: 1;
 
     & .droppable-element-image-container {
       height: 60px;
@@ -165,20 +176,27 @@ body {
       font-weight: 400;
     }
   }
+
+  #droppable-element:hover {
+    cursor: pointer;
+  }
+
   & .droppable-info {
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 14px;
     color: var(--Neutral-500);
+    display: flex;
+    gap: 8px;
+    align-items: center;
 
     & .droppable-info-img {
-      position: relative;
-      top: 4px;
-      color: var(--Neutral-500);
+      /* color: var(--Neutral-500); */
+      color: red;
     }
   }
 }
 
-form {
+.form {
   color: var(--Neutral-0);
   display: flex;
   flex-direction: column;
@@ -196,16 +214,18 @@ form {
     min-height: 30px;
   }
 
-  & input[type="text"],
-  input[type="email"],
+  & #name,
+  #email,
+  #github,
   #submit {
     height: 60px;
     font-size: 19px;
     border-radius: 15px;
   }
 
-  & input[type="text"],
-  input[type="email"] {
+  & #name,
+  #email,
+  #github {
     margin-top: 15px;
     padding-left: 20px;
     border: 2px solid var(--Neutral-500);
@@ -225,6 +245,10 @@ form {
 
   ::placeholder {
     color: var(--Neutral-0);
+  }
+
+  & #name:hover {
+    cursor: pointer;
   }
 }
 

@@ -189,10 +189,17 @@ body {
     gap: 8px;
     align-items: center;
 
-    & .droppable-info-img {
-      /* color: var(--Neutral-500); */
-      color: red;
+    & #droppable-info-img {
+      /* background-color: red; */
+      /* filter: brightness(0.5) sepia(1) hue-rotate(330deg) saturate(6); */
+      /* filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(24) brightness(110%); */
     }
+
+    & svg #path_1 {
+      
+    }
+
+   
   }
 }
 

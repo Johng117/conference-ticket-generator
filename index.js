@@ -19,14 +19,21 @@ const pickerOptions = {
 let fileHandle;
 
 async function getFile() {
-  [fileHandle] = await window.showOpenFilePicker(pickerOptions);
+  
+  try {
+    [fileHandle] = await window.showOpenFilePicker(pickerOptions);
+    const file = await fileHandle.getFile();
+    const fileSizeTest = file.size <= 500000;
+    const suffixTest = fileTestRegex.test(fileHandle.name);
 
-  console.log(fileHandle);
-  let validFile = fileTestRegex.test(fileHandle.name);
-  if (!validFile) {
-    uploadInfoElement.style.color = "red";
-    uploadInfoImage.setAttribute("style", "stroke:red");
-    uploadInfoElement.innerText = "Error: Image is not JPG or PNG";
+    if (!fileSizeTest || !suffixTest) {
+      uploadInfoElement.style.color = "red";
+      uploadInfoImage.style.cssText =
+        "filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(24) brightness(110%);";
+      uploadInfoElement.innerText = "Error: Image is not JPG or PNG";
+    }
+  } catch (error) {
+    console.error(error);
   }
 }
 

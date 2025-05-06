@@ -52,6 +52,10 @@ body {
   width: 100%;
 }
 
+input {
+  outline: none;
+}
+
 .main-container {
   position: relative;
   width: 375px;
@@ -138,6 +142,14 @@ body {
   }
 }
 
+input {
+  transition: 180ms box-shadow ease-in-out;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px var(--Neutral-500) + 40%, 0.8;
+}
+
 .upload-avatar {
   color: var(--Neutral-0);
   font-size: 20px;
@@ -147,7 +159,6 @@ body {
   padding: 15px;
   margin-top: 30px;
 
-  
   & .droppable-element {
     height: 140px;
     width: 100%;
@@ -190,16 +201,7 @@ body {
     align-items: center;
 
     & #droppable-info-img {
-      /* background-color: red; */
-      /* filter: brightness(0.5) sepia(1) hue-rotate(330deg) saturate(6); */
-      /* filter: brightness(50%) sepia(1) hue-rotate(-38deg) saturate(24) brightness(110%); */
     }
-
-    & svg #path_1 {
-      
-    }
-
-   
   }
 }
 
@@ -256,6 +258,11 @@ body {
 
   & #name:hover {
     cursor: pointer;
+  }
+
+  & #name:focus {
+    transition: 180ms box-shadow ease-in-out;
+    box-shadow: 0 0 10px 3px hsl(245, 15%, 98%) 0.8;
   }
 }
 

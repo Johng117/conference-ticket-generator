@@ -1,7 +1,7 @@
 const fileUploadElement = document.getElementById("droppable-element");
 const uploadInfoElement = document.getElementById("droppable-info-text");
 const uploadInfoImage = document.getElementById("droppable-info-img");
-const fileTestRegex = new RegExp("^S+(.jpg|.png)", "g");
+const fileTestRegex = new RegExp("^\\S+(.jpg|.png)");
 
 const pickerOptions = {
   types: [
@@ -19,12 +19,14 @@ const pickerOptions = {
 let fileHandle;
 
 async function getFile() {
-  
   try {
     [fileHandle] = await window.showOpenFilePicker(pickerOptions);
     const file = await fileHandle.getFile();
     const fileSizeTest = file.size <= 500000;
     const suffixTest = fileTestRegex.test(fileHandle.name);
+    
+    console.log("suffixTest", suffixTest);
+    console.log("file name", fileHandle.name);
 
     if (!fileSizeTest || !suffixTest) {
       uploadInfoElement.style.color = "red";

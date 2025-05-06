@@ -18,6 +18,8 @@ const pickerOptions = {
 
 let fileHandle;
 
+
+// function to handle clickable upload process
 async function getFile() {
   try {
     [fileHandle] = await window.showOpenFilePicker(pickerOptions);
@@ -38,5 +40,24 @@ async function getFile() {
     console.error(error);
   }
 }
+
+
+// functions to handle drag and drop process
+function  dropHandler(e) {
+  console.log("Image dropped");
+  e.preventDefault();
+
+  if(e.dataTransfer.items) {
+    [...e.dataTransfer.items].forEach((item, i)=> {
+      if(item.kind==="")
+    })
+  }
+}
+
+function dragOverHandler(e) {
+  console.log("Image in drop element!")
+  e.preventDefault();
+}
+
 
 fileUploadElement.addEventListener("click", getFile);

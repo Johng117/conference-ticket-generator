@@ -32,7 +32,12 @@
       </section>
       <section class="upload-avatar">
         <h4>Upload Avatar</h4>
-        <div class="droppable-element" id="droppable-element">
+        <div
+          class="droppable-element"
+          id="droppable-element"
+          ondrop="dropHandler(event);"
+          ondragover="dragOverHandler(event);"
+        >
           <div class="droppable-element-image-container">
             <img
               id="droppable-element-image"

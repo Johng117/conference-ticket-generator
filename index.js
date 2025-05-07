@@ -49,7 +49,7 @@ function  dropHandler(e) {
 
   if(e.dataTransfer.items) {
     [...e.dataTransfer.items].forEach((item, i)=> {
-      if(item.kind==="")
+      // if(item.kind==="")
     })
   }
 }

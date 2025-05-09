@@ -205,9 +205,6 @@ input:focus {
     display: flex;
     gap: 8px;
     align-items: center;
-
-    & #droppable-info-img {
-    }
   }
 }
 
@@ -254,7 +251,7 @@ input:focus {
     color: var(--Neutral-900);
     font-weight: 800;
     font-size: 20px;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
     z-index: 2;
   }
 
@@ -301,6 +298,7 @@ input:focus {
     margin-top: 25px;
     padding: 0 20px;
     color: var(--Neutral-500);
+    margin-bottom: 50px;
   }
 
   & .success-email {
@@ -310,15 +308,42 @@ input:focus {
 
 .ticket {
   /* display: none; */
-  height: 300px;
+  height: 260px;
+  padding: 5px;
+
+  & .ticket-image {
+    height: 160px;
+    width: 92%;
+    background: url("./assets/images/pattern-ticket.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    display: flex;
+    
+    & .ticket-info-container {
+      border:1px solid white;
+      width: 81%;
+    }
+    & .ticket-number-container {
+      width: 19%;
+      align-content: center;
+
+      & .ticket-number {
+        transform: rotate(-90deg);
+        display: inline-block;
+        font-size: 20px;
+        color: var(--Neutral-500)
+      }
+    }
+  }
 }
 
 .bottom-squiggle {
   position: absolute;
-  height: 250px;
+  height: 190px;
   width: 375px;
   bottom: 0px;
-  left: -9px;
+  left: -51px;
   background-image: url("./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg");
   background-size: contain;
   background-repeat: no-repeat;

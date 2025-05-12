@@ -277,11 +277,11 @@ input:focus {
 
 .success-text-container {
   color: var(--Neutral-0);
+  margin: 40px 0 60px 0;
   /* display: none; */
   & .congrats {
     font-size: 28px;
     font-weight: 800;
-    margin-top: 40px;
     padding: 0 10px;
   }
 
@@ -298,7 +298,6 @@ input:focus {
     margin-top: 25px;
     padding: 0 20px;
     color: var(--Neutral-500);
-    margin-bottom: 50px;
   }
 
   & .success-email {
@@ -319,10 +318,38 @@ input:focus {
     background-repeat: no-repeat;
     margin: auto;
     display: flex;
-    
+
     & .ticket-info-container {
-      border:1px solid white;
+      border: 1px solid white;
       width: 81%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+
+      & .ticket-info-date,
+      .ticket-info-name {
+        height: 50%;
+      }
+
+      & .ticket-info-date {
+        display: flex;
+        gap: 12px;
+
+        & .ticket-info-date-image {
+          height: 26px;
+          width: 26px;
+        }
+
+        & .ticket-info-date-text {
+          font-size: 23px;
+    color: var(--Neutral-0);
+    font-weight: 800;
+    z-index: 5;
+        }
+      }
+
+      & .ticket-info-name {
+      }
     }
     & .ticket-number-container {
       width: 19%;
@@ -332,7 +359,7 @@ input:focus {
         transform: rotate(-90deg);
         display: inline-block;
         font-size: 20px;
-        color: var(--Neutral-500)
+        color: var(--Neutral-500);
       }
     }
   }

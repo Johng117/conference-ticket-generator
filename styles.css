@@ -320,11 +320,10 @@ input:focus {
     display: flex;
 
     & .ticket-info-container {
-      border: 1px solid white;
       width: 81%;
       display: flex;
       flex-direction: column;
-      padding: 20px;
+      padding: 15px;
 
       & .ticket-info-date,
       .ticket-info-name {
@@ -338,17 +337,47 @@ input:focus {
         & .ticket-info-date-image {
           height: 26px;
           width: 26px;
+          margin-top: 5px;
         }
 
         & .ticket-info-date-text {
           font-size: 23px;
-    color: var(--Neutral-0);
-    font-weight: 800;
-    z-index: 5;
+          color: var(--Neutral-0);
+          font-weight: 800;
+          z-index: 5;
+          text-align: start;
+        }
+
+        & .ticket-date {
+          font-size: 14px;
+          color: var(--Neutral-500);
         }
       }
 
       & .ticket-info-name {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        & .ticket-info-name-image {
+          height: 43px; 
+          width: 43px;
+          border-radius: 5px;
+        }
+
+        & .ticket-info-name-text {
+          text-align: start;
+          font-size: 20px;
+          color: var(--Neutral-0);
+
+          & .github-handle {
+            display: flex;
+            font-size: 13px;
+            gap: 5px;
+            align-items: center;
+            color:var(--Neutral-500)
+          }
+        }
       }
     }
     & .ticket-number-container {
